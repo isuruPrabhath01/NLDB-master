@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="LoginFormContext" prefHeight="980.0" prefWidth="1920.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <AnchorPane layoutX="-6.0" prefHeight="980.0" prefWidth="1920.0" style="-fx-background-color: WHITE;">
+         <children>
+            <ImageView fitHeight="980.0" fitWidth="1920.0" layoutX="3.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="80.0" layoutY="49.0" opacity="0.14" prefHeight="886.0" prefWidth="1174.0" style="-fx-background-color: white;" styleClass="log_button" stylesheets="@../assets/style/Style.css">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <Label layoutX="115.0" layoutY="84.0" opacity="0.95" prefHeight="728.0" prefWidth="659.0" style="-fx-background-color: D9D9D9;" styleClass="button4">
+               <stylesheets>
+                  <URL value="@../assets/style/Style.css" />
+                  <URL value="@../assets/style/old.css" />
+               </stylesheets>
+            </Label>
+            <ImageView fitHeight="951.0" fitWidth="1110.0" layoutX="237.0" layoutY="-28.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/img/undraw_Login_re_4vu2__1_-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <JFXPasswordField fx:id="Password" labelFloat="true" layoutX="252.0" layoutY="460.0" prefHeight="31.0" prefWidth="303.0" promptText="Password" />
+            <JFXButton layoutX="295.0" layoutY="641.0" onAction="#btnLogin" prefHeight="53.0" prefWidth="192.0" style="-fx-background-color: #F0A902;" styleClass="button4" stylesheets="@../assets/style/old.css" text="Login">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="UserName" labelFloat="true" layoutX="252.0" layoutY="277.0" prefHeight="31.0" prefWidth="303.0" promptText="User Name" unFocusColor="BLACK" />
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="197.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="70.0" layoutX="192.0" layoutY="446.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/icons8-password-key-64.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="293.0" layoutY="769.0" prefHeight="21.0" prefWidth="222.0" text="Terms of use. Privacy Policy">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="247.0" layoutY="542.0" onAction="#btnForgotPasswordOnAction" prefHeight="31.0" prefWidth="144.0" text="Forgot Password ?" />
+            <Label layoutX="151.0" layoutY="92.0" prefHeight="141.0" prefWidth="361.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="366.0" fitWidth="724.0" layoutX="1419.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/Mlogo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="232.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/icons8-forgot-password-64.png" />
+               </image>
+            </ImageView>
+            <Label contentDisplay="CENTER" layoutX="1385.0" layoutY="500.0" prefHeight="141.0" prefWidth="452.0" text="WELCOME" textFill="WHITE">
+               <font>
+                  <Font size="96.0" />
+               </font>
+               <effect>
+                  <DropShadow height="23.27" radius="16.9525" width="46.54" />
+               </effect>
+            </Label>
+            <Label layoutX="1277.0" layoutY="632.0" prefHeight="286.0" prefWidth="629.0" text="&quot;Welcome to the NLDB Animal Farm System Software! We are excited to provide you with a comprehensive and user-friendly tool to manage and optimize all aspects of your animal farm operations. With this software, you will be able to keep track of your animals, monitor their health and growth, manage feed and water supply, generate reports, and more. Whether you have pigs, hens, cows, sheep, or any other type of animals, this software is designed to meet your specific needs. We hope you find it valuable and we are always available to assist you if you have any questions or need help.&quot;" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Line endX="380.0" layoutX="1397.0" layoutY="622.0" startX="34.0" stroke="WHITE" />
+         </children></AnchorPane>
+      <Label fx:id="lblError" alignment="CENTER" layoutX="182.0" layoutY="506.0" prefHeight="21.0" prefWidth="394.0" textFill="RED" />
+
+
+   </children>
+</AnchorPane>

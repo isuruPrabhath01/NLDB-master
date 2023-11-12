@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AddPigContext" prefHeight="700.0" prefWidth="900.0" styleClass="log_button" stylesheets="@../assets/style/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddAnimalFormController">
+   <children>
+      <Label layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="880.0" style="-fx-background-color: WHITE;" styleClass="ADD_LABEL" stylesheets="@../assets/style/Style.css" />
+      <JFXTextField fx:id="txtId" layoutX="74.0" layoutY="84.0" prefHeight="31.0" prefWidth="312.0" promptText="ID" />
+      <JFXTextField fx:id="txtQty" layoutX="74.0" layoutY="169.0" prefHeight="31.0" prefWidth="312.0" promptText="Qty" styleClass="text-field" />
+      <JFXButton layoutX="399.0" layoutY="84.0" onAction="#btnSearchOnAction" style="-fx-background-color: #9F95B5;" text="Search" />
+      <JFXButton layoutX="680.0" layoutY="603.0" onAction="#btnUpdateOnACtion" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #7B926B;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="510.0" layoutY="603.0" onAction="#btnSaveOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #3D3D3C;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <ColorAdjust brightness="0.05" hue="-0.42">
+               <input>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </input>
+            </ColorAdjust>
+         </effect>
+      </JFXButton>
+      <JFXButton layoutX="240.0" layoutY="603.0" onAction="#btnDeleteOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #F37000;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="70.0" layoutY="603.0" onAction="#btnCancelPig" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #FD3700;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Cancel" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXDatePicker fx:id="txtDate" layoutX="514.0" layoutY="169.0" prefHeight="31.0" prefWidth="312.0" promptText="Date" />
+      <JFXComboBox fx:id="cbSupplier" layoutX="70.0" layoutY="251.0" prefHeight="31.0" prefWidth="312.0" promptText="Supplier ID" />
+      <JFXComboBox fx:id="cbType" layoutX="514.0" layoutY="84.0" onAction="#cbTypeOnAction" prefHeight="31.0" prefWidth="312.0" promptText="Type" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="53.0" prefWidth="870.0" style="-fx-background-color: #374151;" styleClass="menu_name1" stylesheets="@../assets/style/Style.css" text="Add Animal" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <JFXCheckBox fx:id="checkBox" layoutX="514.0" layoutY="266.0" onAction="#checkBoxOnAction" text="Breed" />
+      <JFXComboBox fx:id="cbCage" layoutX="70.0" layoutY="328.0" prefHeight="31.0" prefWidth="312.0" promptText="Cage" />
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>

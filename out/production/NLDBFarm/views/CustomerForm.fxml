@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="980.0" prefWidth="1650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFormController">
+   <children>
+      <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+         </viewport>
+      </ImageView>
+      <AnchorPane opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+         <children>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: white;" styleClass="menu_label" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="661.0" layoutY="14.0" prefHeight="80.0" prefWidth="328.0" text="Customer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtCustomerId" labelFloat="true" layoutX="60.0" layoutY="200.0" prefHeight="31.0" prefWidth="312.0" promptText="Customer ID" />
+            <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="500.0" layoutY="200.0" prefHeight="31.0" prefWidth="312.0" promptText="Customer Name" />
+            <JFXTextField fx:id="txtCustomerEmail" layoutX="500.0" layoutY="270.0" prefHeight="31.0" prefWidth="312.0" promptText="Customer Email" />
+            <JFXTextField fx:id="txtCustomerContact" labelFloat="true" layoutX="60.0" layoutY="270.0" prefHeight="31.0" prefWidth="312.0" promptText="Customer Contact" />
+            <ImageView fitHeight="392.0" fitWidth="571.0" layoutX="1063.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/undraw_survey_05s5.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tblCustomer" layoutX="10.0" layoutY="490.0" prefHeight="480.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="327.0" text="Customer ID" />
+                  <TableColumn fx:id="colName" prefWidth="308.0" text="Name" />
+                  <TableColumn fx:id="colAddress" prefWidth="304.0" text="E- Mail" />
+                  <TableColumn fx:id="colMobileNo" prefWidth="425.0" text="Mobile Number" />
+               </columns>
+            </TableView>
+            <JFXButton layoutX="964.0" layoutY="247.0" onAction="#btnUpdateOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #7B926B;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXButton>
+            <JFXButton layoutX="385.0" layoutY="200.0" style="-fx-background-color: #9F95B5;" text="Search" />
+            <JFXButton layoutX="964.0" layoutY="177.0" onAction="#btnSaveCustomer" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #3D3D3C;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <ColorAdjust brightness="0.05" hue="-0.42">
+                     <input>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </input>
+                  </ColorAdjust>
+               </effect></JFXButton>
+            <JFXButton layoutX="964.0" layoutY="317.0" onAction="#btnDeleteOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #F37000;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

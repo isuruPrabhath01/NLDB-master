@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnimalContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AnimalManageFormController">
+
+   <children>
+      <AnchorPane prefHeight="1090.0" prefWidth="1930.0">
+         <children>
+            <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+               </image>
+               <viewport>
+                  <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+               </viewport>
+            </ImageView>
+            <AnchorPane opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: white;" styleClass="menu_label" stylesheets="@../assets/style/Style.css" />
+                  <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+                  <Label layoutX="661.0" layoutY="14.0" prefHeight="80.0" prefWidth="328.0" text="Animals" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tblChicken" layoutX="10.0" layoutY="520.0" prefHeight="450.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+                     <columns>
+                        <TableColumn prefWidth="181.0" text="Cage ID" />
+                        <TableColumn prefWidth="296.0" text="Animal Type" />
+                        <TableColumn prefWidth="369.0" text="Address" />
+                        <TableColumn prefWidth="473.0" text="NIC" />
+                        <TableColumn prefWidth="310.0" text="Mobile Number" />
+                     </columns>
+                  </TableView>
+                  <JFXComboBox layoutX="638.0" layoutY="370.0" prefHeight="31.0" prefWidth="374.0" />
+
+                  <JFXButton layoutX="20.0" layoutY="191.0" onAction="#btnAddChicken" prefHeight="93.0" prefWidth="328.0" stylesheets="@../assets/style/Style.css" text="Chicken" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="ipad-dark-grey" />
+                        <String fx:value="log_button" />
+                        <String fx:value="ipad-dark-grey1" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="1302.0" layoutY="191.0" onAction="#btnAddPig" prefHeight="93.0" prefWidth="328.0" stylesheets="@../assets/style/Style.css" text="Pig" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="ipad-dark-grey" />
+                        <String fx:value="log_button" />
+                        <String fx:value="ipad-dark-grey1" />
+                     </styleClass>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="947.0" layoutY="191.0" onAction="#btnPCage" prefHeight="93.0" prefWidth="328.0" styleClass="shiny_orange" stylesheets="@../assets/style/Style.css" text="Pig Cages" textFill="#000000e0">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="40.0" surfaceScale="6.71">
+                           <light>
+                              <Light.Distant />
+                           </light>
+                           <bumpInput>
+                              <InnerShadow choke="1.0" />
+                           </bumpInput>
+                        </Lighting>
+                     </effect>
+                  </JFXButton>
+                  <JFXButton layoutX="375.0" layoutY="191.0" onAction="#btnCCage" prefHeight="93.0" prefWidth="328.0" styleClass="shiny_orange" stylesheets="@../assets/style/Style.css" text="Chicken Cages" textFill="#000000e0">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Lighting diffuseConstant="2.0" specularConstant="2.0" specularExponent="40.0" surfaceScale="6.71">
+                           <light>
+                              <Light.Distant />
+                           </light>
+                           <bumpInput>
+                              <InnerShadow choke="1.0" />
+                           </bumpInput>
+                        </Lighting>
+                     </effect>
+                  </JFXButton>
+                  <TableView fx:id="tblPig" layoutX="10.0" layoutY="520.0" prefHeight="450.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+                     <columns>
+                        <TableColumn prefWidth="181.0" text="Cage ID" />
+                        <TableColumn prefWidth="296.0" text="Animal Type" />
+                        <TableColumn prefWidth="369.0" text="Address" />
+                        <TableColumn prefWidth="473.0" text="NIC" />
+                        <TableColumn prefWidth="310.0" text="Mobile Number" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane fx:id="AddChickenContext" layoutX="375.0" layoutY="190.0" prefHeight="700.0" prefWidth="900.0" styleClass="log_button" stylesheets="@../assets/style/Style.css" visible="false">
+                     <children>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="880.0" style="-fx-background-color: WHITE;" styleClass="ADD_LABEL" stylesheets="@../assets/style/Style.css">
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                        </Label>
+                        <JFXTextField fx:id="txtId" layoutX="74.0" layoutY="84.0" prefHeight="31.0" prefWidth="312.0" promptText="Id" />
+                        <JFXTextField layoutX="514.0" layoutY="154.0" prefHeight="31.0" prefWidth="312.0" />
+                        <JFXTextField layoutX="74.0" layoutY="224.0" prefHeight="31.0" prefWidth="312.0" styleClass="text-field" />
+                        <JFXTextField fx:id="txtQty" layoutX="74.0" layoutY="154.0" prefHeight="31.0" prefWidth="312.0" promptText="QTY" />
+                        <JFXButton layoutX="399.0" layoutY="84.0" style="-fx-background-color: #9F95B5;" text="Search" />
+                        <JFXButton layoutX="680.0" layoutY="603.0" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #7B926B;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="510.0" layoutY="603.0" onAction="#btnSaveOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #3D3D3C;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Save" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <ColorAdjust brightness="0.05" hue="-0.42">
+                                 <input>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </input>
+                              </ColorAdjust>
+                           </effect>
+                        </JFXButton>
+                        <JFXButton layoutX="240.0" layoutY="603.0" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #F37000;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="70.0" layoutY="603.0" onAction="#btnCancelChicken" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #FD3700;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField layoutX="514.0" layoutY="233.0" prefHeight="31.0" prefWidth="312.0" />
+                        <JFXDatePicker fx:id="txtDate" layoutX="514.0" layoutY="319.0" prefHeight="31.0" prefWidth="312.0" promptText="Date" />
+                        <JFXComboBox layoutX="74.0" layoutY="319.0" prefHeight="31.0" prefWidth="312.0" promptText="Supplier ID" />
+                        <JFXComboBox fx:id="cbTypes" layoutX="514.0" layoutY="84.0" prefHeight="31.0" prefWidth="312.0" promptText="Type" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ChickenCageContext" prefHeight="980.0" prefWidth="1650.0" visible="false">
+         <children>
+            <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+               </image>
+               <viewport>
+                  <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+               </viewport>
+            </ImageView>
+            <AnchorPane opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: white;" styleClass="menu_label" stylesheets="@../assets/style/Style.css">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+                  <Label layoutX="715.0" layoutY="16.0" prefHeight="93.0" prefWidth="432.0" text="Animal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="173.0" opacity="0.8" prefHeight="350.0" prefWidth="388.0" style="-fx-background-color: #d1d8e0;" styleClass="animal_count_label2" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="299.0" fitWidth="165.0" layoutX="169.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/chicken-coop-clipart-3-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="267.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/icons8-temperatures-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="290.0" layoutY="107.0" prefHeight="61.0" prefWidth="107.0" text="20" textFill="#98260d">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="111.0" prefHeight="53.0" prefWidth="1610.0" style="-fx-background-color: #374151;" text="Chicken Cages" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="250.0" prefHeight="194.0" prefWidth="149.0" style="-fx-background-color: #4b6584;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label layoutX="330.0" layoutY="188.0" prefHeight="69.0" prefWidth="47.0" text="31">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="369.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-celsius-67.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="22.0" layoutY="260.0" prefHeight="53.0" prefWidth="125.0" text="Chicks">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="18.0" layoutY="313.0" prefHeight="70.0" prefWidth="149.0" text="164">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="427.0" layoutY="170.0" opacity="0.8" prefHeight="350.0" prefWidth="388.0" style="-fx-background-color: #d1d8e0;" styleClass="animal_count_label2" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="299.0" fitWidth="169.0" layoutX="578.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/chicken-coop-clipart-3-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="676.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/icons8-temperatures-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="427.0" layoutY="247.0" prefHeight="194.0" prefWidth="149.0" style="-fx-background-color: #4b6584;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label layoutX="739.0" layoutY="185.0" prefHeight="69.0" prefWidth="47.0" text="31">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="778.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-celsius-67.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="431.0" layoutY="257.0" prefHeight="53.0" prefWidth="125.0" text="Hen">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="427.0" layoutY="310.0" prefHeight="70.0" prefWidth="149.0" text="164">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="836.0" layoutY="170.0" opacity="0.8" prefHeight="350.0" prefWidth="388.0" style="-fx-background-color: #d1d8e0;" styleClass="animal_count_label2" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="299.0" fitWidth="169.0" layoutX="987.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/chicken-coop-clipart-3-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="1085.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/icons8-temperatures-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="836.0" layoutY="247.0" prefHeight="194.0" prefWidth="149.0" style="-fx-background-color: #4b6584;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label layoutX="1148.0" layoutY="185.0" prefHeight="69.0" prefWidth="47.0" text="31">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="1187.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-celsius-67.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="840.0" layoutY="257.0" prefHeight="53.0" prefWidth="125.0" text="Chicks">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="836.0" layoutY="310.0" prefHeight="70.0" prefWidth="149.0" text="164">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1242.0" layoutY="173.0" opacity="0.8" prefHeight="350.0" prefWidth="388.0" style="-fx-background-color: #d1d8e0;" styleClass="animal_count_label2" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="299.0" fitWidth="169.0" layoutX="1393.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/chicken-coop-clipart-3-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="1491.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/icons8-temperatures-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="1242.0" layoutY="250.0" prefHeight="194.0" prefWidth="149.0" style="-fx-background-color: #4b6584;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label layoutX="1554.0" layoutY="188.0" prefHeight="69.0" prefWidth="47.0" text="31">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="1593.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-celsius-67.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="1246.0" layoutY="260.0" prefHeight="53.0" prefWidth="125.0" text="Chicks">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="1242.0" layoutY="313.0" prefHeight="70.0" prefWidth="149.0" text="164">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="47.0" layoutY="37.0" onAction="#btnBackChicken" prefHeight="47.0" prefWidth="165.0" style="-fx-background-color: #d1d8e0;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Back" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="31.1" radius="18.9375" width="46.65" />
+                     </effect>
+                  </JFXButton>
+                  <TableView fx:id="tblChickenInCage" layoutX="10.0" layoutY="530.0" prefHeight="450.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+                     <columns>
+                        <TableColumn prefWidth="181.0" text="Cage ID" />
+                        <TableColumn prefWidth="296.0" text="Animal Type" />
+                        <TableColumn prefWidth="369.0" text="Address" />
+                        <TableColumn prefWidth="473.0" text="NIC" />
+                        <TableColumn prefWidth="310.0" text="Mobile Number" />
+                     </columns>
+                  </TableView>
+                  <JFXButton layoutX="1447.0" layoutY="37.0" onAction="#btnToPigCage" prefHeight="47.0" prefWidth="165.0" style="-fx-background-color: #d1d8e0;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Pig Cages" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="31.1" radius="18.9375" width="46.65" />
+                     </effect>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="PigCageContext" prefHeight="980.0" prefWidth="1650.0" visible="false">
+         <children>
+            <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+               </image>
+               <viewport>
+                  <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+               </viewport>
+            </ImageView>
+            <AnchorPane fx:id="AnimalContext1" opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: white;" styleClass="menu_label" stylesheets="@../assets/style/Style.css">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+                  <Label layoutX="18.0" layoutY="168.0" opacity="0.8" prefHeight="350.0" prefWidth="388.0" style="-fx-background-color: #d1d8e0;" styleClass="animal_count_label2" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <Label layoutX="715.0" layoutY="16.0" prefHeight="93.0" prefWidth="432.0" text="Animal" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="299.0" fitWidth="305.0" layoutX="132.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/30617586-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="266.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../../../Downloads/icons8-temperatures-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="290.0" layoutY="107.0" prefHeight="61.0" prefWidth="107.0" text="20" textFill="#98260d">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="111.0" prefHeight="53.0" prefWidth="1610.0" style="-fx-background-color: #374151;" text="Pig Cages" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="245.0" prefHeight="194.0" prefWidth="149.0" style="-fx-background-color: #4b6584;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label fx:id="lblTemp1" layoutX="330.0" layoutY="183.0" prefHeight="69.0" prefWidth="47.0" text="31">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="369.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-celsius-67.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="22.0" layoutY="255.0" prefHeight="53.0" prefWidth="125.0" text="Chicks">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="18.0" layoutY="308.0" prefHeight="70.0" prefWidth="149.0" text="164">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="427.0" layoutY="170.0" opacity="0.8" prefHeight="350.0" prefWidth="388.0" style="-fx-background-color: #d1d8e0;" styleClass="animal_count_label2" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <Label layoutX="427.0" layoutY="247.0" prefHeight="194.0" prefWidth="149.0" style="-fx-background-color: #4b6584;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label fx:id="lblTemp2" layoutX="739.0" layoutY="185.0" prefHeight="69.0" prefWidth="47.0" text="31">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="778.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-celsius-67.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="431.0" layoutY="257.0" prefHeight="53.0" prefWidth="125.0" text="Hen">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="427.0" layoutY="310.0" prefHeight="70.0" prefWidth="149.0" text="164">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="836.0" layoutY="170.0" opacity="0.8" prefHeight="350.0" prefWidth="388.0" style="-fx-background-color: #d1d8e0;" styleClass="animal_count_label2" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="319.0" fitWidth="302.0" layoutX="952.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/30617586-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="1086.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                       <Image url="@../../../../../Downloads/icons8-temperatures-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="836.0" layoutY="247.0" prefHeight="194.0" prefWidth="149.0" style="-fx-background-color: #4b6584;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="299.0" fitWidth="305.0" layoutX="543.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/30617586-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblTemp3" layoutX="1148.0" layoutY="185.0" prefHeight="69.0" prefWidth="47.0" text="31">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="840.0" layoutY="257.0" prefHeight="53.0" prefWidth="125.0" text="Chicks">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="836.0" layoutY="310.0" prefHeight="70.0" prefWidth="149.0" text="164">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1242.0" layoutY="173.0" opacity="0.8" prefHeight="350.0" prefWidth="388.0" style="-fx-background-color: #d1d8e0;" styleClass="animal_count_label2" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="1187.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-celsius-67.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="299.0" fitWidth="305.0" layoutX="1357.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/30617586-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="1494.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/icons8-temperatures-64.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="93.0" fitWidth="77.0" layoutX="677.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/icons8-temperatures-64.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="1242.0" layoutY="250.0" prefHeight="194.0" prefWidth="149.0" style="-fx-background-color: #4b6584;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <Label fx:id="lblTemp4" layoutX="1554.0" layoutY="188.0" prefHeight="69.0" prefWidth="47.0" text="31">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="28.0" fitWidth="26.0" layoutX="1593.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-celsius-67.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="1246.0" layoutY="260.0" prefHeight="53.0" prefWidth="125.0" text="Chicks">
+                     <font>
+                        <Font name="System Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="1242.0" layoutY="313.0" prefHeight="70.0" prefWidth="149.0" text="164">
+                     <font>
+                        <Font name="System Bold Italic" size="48.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="33.0" layoutY="37.0" onAction="#btnBackPigCage" prefHeight="51.0" prefWidth="199.0" style="-fx-background-color: #d1d8e0;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Back" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="31.1" radius="18.9375" width="46.65" />
+                     </effect>
+                  </JFXButton>
+                  <TableView fx:id="tblPigInCage" layoutX="10.0" layoutY="520.0" prefHeight="450.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+                     <columns>
+                        <TableColumn prefWidth="181.0" text="Cage ID" />
+                        <TableColumn prefWidth="296.0" text="Animal Type" />
+                        <TableColumn prefWidth="369.0" text="Address" />
+                        <TableColumn prefWidth="473.0" text="NIC" />
+                        <TableColumn prefWidth="310.0" text="Mobile Number" />
+                     </columns>
+                  </TableView>
+                  <JFXButton layoutX="1416.0" layoutY="37.0" onAction="#btnToCancelPCage" prefHeight="51.0" prefWidth="199.0" style="-fx-background-color: #d1d8e0;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.2" height="31.1" radius="18.9375" width="46.65" />
+                     </effect>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

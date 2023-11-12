@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="acLordingPage" prefHeight="323.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoadingFormController">
+   <children>
+      <ImageView fitHeight="404.0" fitWidth="600.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <image>
+            <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="txtText" fill="WHITE" layoutX="376.0" layoutY="287.0" smooth="false" stroke="#e48080" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="198.13671875" AnchorPane.rightAnchor="25.0" />
+      <ProgressBar fx:id="prbProgressBar" layoutX="25.0" layoutY="302.0" prefHeight="10.0" prefWidth="550.0" progress="0.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+         <effect>
+            <Glow level="0.52" />
+         </effect>
+      </ProgressBar>
+      <Text fx:id="txtLoadingText" fill="WHITE" fontSmoothingType="LCD" layoutX="376.0" layoutY="270.0" smooth="false" stroke="#e48080" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="198.13671875" AnchorPane.rightAnchor="25.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="229.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icon/Mlogo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

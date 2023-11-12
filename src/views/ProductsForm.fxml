@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductsFormController">
+   <children>
+      <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+         </viewport>
+      </ImageView>
+      <AnchorPane opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+         <children>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: white;" styleClass="menu_label" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="661.0" layoutY="14.0" prefHeight="80.0" prefWidth="328.0" text="Products" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblProduct" layoutX="10.0" layoutY="490.0" prefHeight="480.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+               <columns>
+                  <TableColumn fx:id="tblProductType" prefWidth="415.0" text="Type" />
+                  <TableColumn fx:id="tblProductQty" prefWidth="715.0" text="QTY" />
+                  <TableColumn fx:id="tblProductUnitPrice" prefWidth="499.0" text="UnitPrice" />
+               </columns>
+            </TableView>
+            <ImageView fitHeight="405.0" fitWidth="772.0" layoutX="1000.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/undraw_heavy_box_agqi-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="336.0" layoutY="260.0" onAction="#btnAddProduct" prefHeight="80.0" prefWidth="537.0" stylesheets="@../assets/style/Style.css" text="ADD PRODUCTS" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="ipad-dark-grey" />
+                  <String fx:value="log_button" />
+                  <String fx:value="ipad-dark-grey1" />
+               </styleClass>
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </JFXButton>
+            <AnchorPane fx:id="ancAddProducts" layoutX="385.0" layoutY="200.0" prefHeight="700.0" prefWidth="900.0" styleClass="log_button" stylesheets="@../assets/style/Style.css">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="880.0" style="-fx-background-color: WHITE;" styleClass="ADD_LABEL" stylesheets="@../assets/style/Style.css" />
+                  <JFXTextField fx:id="txtDate" layoutX="340.0" layoutY="271.0" prefHeight="31.0" prefWidth="312.0" />
+                  <JFXTextField fx:id="txtQtyOnHand" layoutX="340.0" layoutY="224.0" prefHeight="31.0" prefWidth="312.0" />
+                  <JFXButton layoutX="394.0" layoutY="489.0" onAction="#btnAddOnAction" prefHeight="47.0" prefWidth="203.0" style="-fx-background-color: #3D3D3C;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="ADD" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <ColorAdjust brightness="0.05" hue="-0.42">
+                           <input>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </input>
+                        </ColorAdjust>
+                     </effect>
+                  </JFXButton>
+                  <JFXButton layoutX="395.0" layoutY="603.0" onAction="#btnClearAllOnAction" prefHeight="47.0" prefWidth="203.0" style="-fx-background-color: #F37000;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Clear All" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="58.0" layoutY="603.0" onAction="#btnCancelPig" prefHeight="47.0" prefWidth="146.0" style="-fx-background-color: #FD3700;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Back" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="txtAddingQty" layoutX="340.0" layoutY="328.0" prefHeight="31.0" prefWidth="312.0" />
+                  <JFXComboBox fx:id="cmbSelectProduct" layoutX="340.0" layoutY="185.0" onAction="#cmbSelectProductOnAction" prefHeight="31.0" prefWidth="312.0" promptText="Type" />
+                  <Text layoutX="141.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SELECT PRODUCTS TYPS" AnchorPane.leftAnchor="141.0" />
+                  <Text layoutX="141.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QTY ON HAND" wrappingWidth="173.2685546875" AnchorPane.leftAnchor="141.0" />
+                  <Text layoutX="161.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE" wrappingWidth="162.70751953125" AnchorPane.leftAnchor="141.0" />
+                  <Text layoutX="140.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADDING  QTY" wrappingWidth="173.26855659484863" AnchorPane.leftAnchor="141.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="53.0" prefWidth="870.0" style="-fx-background-color: #374151;" styleClass="menu_name1" stylesheets="@../assets/style/Style.css" text="Add Products" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtAnimalCom" layoutX="340.0" layoutY="391.0" prefHeight="31.0" prefWidth="312.0" />
+                  <Text layoutX="141.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ANIMAL COM." wrappingWidth="173.26855659484863" />
+               </children>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

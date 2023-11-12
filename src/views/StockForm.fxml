@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ancStock" prefHeight="980.0" prefWidth="1650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StockFormController">
+   <children>
+      <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+         </viewport>
+      </ImageView>
+      <AnchorPane opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+         <children>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: white;" styleClass="menu_label" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="661.0" layoutY="14.0" prefHeight="80.0" prefWidth="328.0" text="Stock" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblItem" layoutX="10.0" layoutY="490.0" onMouseClicked="#tblClick" prefHeight="480.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="181.0" text="Id" />
+                  <TableColumn fx:id="colName" prefWidth="296.0" text="Name" />
+                  <TableColumn fx:id="colType" prefWidth="369.0" text="type" />
+                  <TableColumn fx:id="colQty" prefWidth="473.0" text="qty on stock" />
+                  <TableColumn fx:id="colPrice" prefWidth="310.0" text="price" />
+               </columns>
+            </TableView>
+            <ImageView layoutX="939.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/undraw_logistics_x4dc__2_-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="20.0" layoutY="327.0" onAction="#btnAddFood" prefHeight="80.0" prefWidth="537.0" stylesheets="@../assets/style/Style.css" text="Foods" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="ipad-dark-grey" />
+                  <String fx:value="log_button" />
+                  <String fx:value="ipad-dark-grey1" />
+               </styleClass>
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="31.0" layoutY="153.0" onAction="#btnAddMedicine" prefHeight="80.0" prefWidth="537.0" stylesheets="@../assets/style/Style.css" text="Medicine" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="ipad-dark-grey" />
+                  <String fx:value="log_button" />
+                  <String fx:value="ipad-dark-grey1" />
+               </styleClass>
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </JFXButton>
+            <AnchorPane fx:id="AddMedicineContext" layoutX="385.0" layoutY="200.0" prefHeight="700.0" prefWidth="900.0" styleClass="log_button" stylesheets="@../assets/style/Style.css">
+               <children>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="680.0" prefWidth="880.0" style="-fx-background-color: WHITE;" styleClass="ADD_LABEL" stylesheets="@../assets/style/Style.css" />
+                  <JFXTextField fx:id="txtMedicineName" layoutX="74.0" layoutY="186.0" prefHeight="31.0" prefWidth="312.0" promptText="name" />
+                  <JFXTextField fx:id="txtMedicineQty" layoutX="74.0" layoutY="224.0" prefHeight="31.0" prefWidth="312.0" promptText="qty" styleClass="text-field" />
+                  <JFXTextField fx:id="txtMedicineId" editable="false" layoutX="74.0" layoutY="123.0" prefHeight="31.0" prefWidth="312.0" promptText="id" />
+                  <JFXButton fx:id="btnMedicineUpdate" layoutX="680.0" layoutY="603.0" onAction="#btnMedicineUpdateOnACtion" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #7B926B;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnMedicineSave" layoutX="510.0" layoutY="603.0" onAction="#btnMedicineSaveOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #3D3D3C;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <ColorAdjust brightness="0.05" hue="-0.42">
+                           <input>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </input>
+                        </ColorAdjust>
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="btnMedicineDelete" layoutX="240.0" layoutY="603.0" onAction="#btnMedicineDeleteOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #F37000;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnMedicineCancel" layoutX="70.0" layoutY="603.0" onAction="#btnMedicineCancelOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #FD3700;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="txtMedicinePrice" layoutX="74.0" layoutY="293.0" prefHeight="31.0" prefWidth="312.0" promptText="price" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="15.0" prefHeight="53.0" prefWidth="861.0" style="-fx-background-color: #374151;" styleClass="menu_name" stylesheets="@../assets/style/Style.css" text="Add Medicine" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </AnchorPane>
+            <AnchorPane fx:id="AddFoodContext" layoutX="385.0" layoutY="200.0" prefHeight="700.0" prefWidth="900.0" styleClass="log_button" stylesheets="@../assets/style/Style.css">
+               <children>
+                  <Label layoutX="10.0" layoutY="15.0" prefHeight="680.0" prefWidth="880.0" style="-fx-background-color: WHITE;" styleClass="ADD_LABEL" stylesheets="@../assets/style/Style.css" />
+                  <JFXTextField fx:id="txtFoodName" layoutX="514.0" layoutY="154.0" prefHeight="31.0" prefWidth="312.0" promptText="name" />
+                  <JFXTextField fx:id="txtFoodQty" layoutX="74.0" layoutY="224.0" prefHeight="31.0" prefWidth="312.0" promptText="quantity" styleClass="text-field" />
+                  <JFXTextField fx:id="txtFoodId" editable="false" layoutX="74.0" layoutY="154.0" prefHeight="31.0" prefWidth="312.0" promptText="id" />
+                  <JFXButton fx:id="btnFoodUpdate" layoutX="680.0" layoutY="603.0" onAction="#btnFoodUpdateOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #7B926B;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnFoodSave" layoutX="510.0" layoutY="603.0" onAction="#btnFoodSaveOnAction" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #3D3D3C;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <ColorAdjust brightness="0.05" hue="-0.42">
+                           <input>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </input>
+                        </ColorAdjust>
+                     </effect>
+                  </JFXButton>
+                  <JFXButton fx:id="btnFoodDelete" layoutX="240.0" layoutY="603.0" onAction="#btnFoodDeleteOnACtion" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #F37000;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnFoodCansel" layoutX="70.0" layoutY="603.0" onAction="#btnFoodCanselOnACtion" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #FD3700;" styleClass="log_button" stylesheets="@../assets/style/Style.css" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="txtFoodPrice" layoutX="514.0" layoutY="233.0" prefHeight="31.0" prefWidth="312.0" promptText="price" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="53.0" prefWidth="870.0" style="-fx-background-color: #374151;" styleClass="menu_name1" stylesheets="@../assets/style/Style.css" text="Add Foods" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

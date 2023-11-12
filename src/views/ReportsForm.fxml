@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="980.0" prefWidth="1650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportsFormController">
+   <children>
+      <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+         </viewport>
+      </ImageView>
+      <AnchorPane opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+         <children>
+            <Label layoutX="10.0" layoutY="20.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: white;" styleClass="menu_label" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="661.0" layoutY="14.0" prefHeight="80.0" prefWidth="328.0" text="Customer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="351.0" fitWidth="597.0" layoutX="1080.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/undraw_Finance_re_gnv2__1_-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="20.0" layoutY="160.0" prefHeight="68.0" prefWidth="604.0" style="-fx-background-color: #FD6600;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css" text="Daily Income :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <BarChart fx:id="BarChart" layoutX="10.0" layoutY="520.0" prefHeight="450.0" prefWidth="1630.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Label layoutX="20.0" layoutY="293.0" prefHeight="68.0" prefWidth="979.0" style="-fx-background-color: #FD6600;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css" text="Annual Income :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <effect>
+                  <InnerShadow>
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </InnerShadow>
+               </effect>
+            </Label>
+            <Label layoutX="20.0" layoutY="225.0" prefHeight="68.0" prefWidth="798.0" style="-fx-background-color: #FD6600;" styleClass="animal_count_label" stylesheets="@../assets/style/Style.css" text="Monthly Income :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </Label>
+            <Label fx:id="lblDayIncome" layoutX="331.0" layoutY="163.0" prefHeight="60.0" prefWidth="264.0" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAnnualIncome" layoutX="414.0" layoutY="297.0" prefHeight="60.0" prefWidth="490.0" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblMonthlyIncome" layoutX="360.0" layoutY="229.0" prefHeight="60.0" prefWidth="372.0" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

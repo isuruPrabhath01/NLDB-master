@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="DisplayDashboardContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="1650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DisplayDashBoardFormController">
+   <children>
+      <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+         </viewport>
+      </ImageView>
+      <AnchorPane opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+         <children>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: WHITE;" styleClass="menu_label" stylesheets="@../assets/style/Style.css" />
+            <Label layoutX="1070.0" layoutY="110.0" prefHeight="850.0" prefWidth="560.0" style="-fx-background-color: D9D9D9;" styleClass="d_db_label" stylesheets="@../assets/style/Style.css">
+               <effect>
+                  <InnerShadow />
+               </effect></Label>
+            <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+            <PieChart layoutX="1100.0" layoutY="150.0" />
+            <Label layoutX="20.0" layoutY="110.0" prefHeight="850.0" prefWidth="1040.0" style="-fx-background-color: D9D9D9;" styleClass="d_db_label" stylesheets="@../assets/style/Style.css">
+               <effect>
+                  <InnerShadow />
+               </effect></Label>
+            <Label layoutX="661.0" layoutY="14.0" prefHeight="80.0" prefWidth="328.0" text="DashBoard" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+            <PieChart fx:id="mainChart" layoutX="1100.0" layoutY="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

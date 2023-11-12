@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="980.0" prefWidth="1650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BillingFormController">
+   <children>
+      <ImageView fitHeight="1255.0" fitWidth="1920.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/img/IMG-20230127-WA0056-01.jpeg.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D height="750.0" minX="152.0" width="850.0" />
+         </viewport>
+      </ImageView>
+      <AnchorPane opacity="0.95" prefHeight="980.0" prefWidth="1650.0" style="-fx-background-color: #333333;" stylesheets="@../assets/style/Style.css">
+         <children>
+            <TableView layoutX="10.0" layoutY="490.0" prefHeight="480.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+               <columns>
+                  <TableColumn prefWidth="181.0" text="Customer ID" />
+                  <TableColumn prefWidth="296.0" text="Name" />
+                  <TableColumn prefWidth="369.0" text="Address" />
+                  <TableColumn prefWidth="473.0" text="NIC" />
+                  <TableColumn prefWidth="310.0" text="Mobile Number" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="10.0" layoutY="10.0" prefHeight="960.0" prefWidth="1630.0" style="-fx-background-color: white;" styleClass="menu_label" stylesheets="@../assets/style/Style.css" />
+      <Label layoutX="20.0" layoutY="20.0" prefHeight="80.0" prefWidth="1610.0" styleClass="menu_name" stylesheets="@../assets/style/Style.css" />
+      <Label layoutX="661.0" layoutY="14.0" prefHeight="80.0" prefWidth="328.0" text="Billing" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="64.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblCart" layoutX="10.0" layoutY="490.0" prefHeight="480.0" prefWidth="1630.0" stylesheets="@../assets/style/table.css">
+         <columns>
+            <TableColumn fx:id="colItemCode" prefWidth="181.0" text="Item Code" />
+            <TableColumn fx:id="colName" prefWidth="296.0" text="Name" />
+            <TableColumn fx:id="colQty" prefWidth="369.0" text="QTY" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="473.0" text="Unit Price" />
+            <TableColumn fx:id="colSubTotal" prefWidth="310.0" text="Sub Total" />
+         </columns>
+      </TableView>
+      <Label layoutX="20.0" layoutY="221.0" prefHeight="259.0" prefWidth="463.0" style="-fx-background-color: #d1d8e0;" styleClass="billing_label" stylesheets="@../assets/style/Style.css" />
+      <Label layoutX="20.0" layoutY="105.0" prefHeight="108.0" prefWidth="463.0" style="-fx-background-color: #d1d8e0;" styleClass="billing_label" />
+      <Label layoutX="487.0" layoutY="105.0" prefHeight="206.0" prefWidth="840.0" style="-fx-background-color: #d1d8e0;" styleClass="billing_label" stylesheets="@../assets/style/Style.css" />
+      <Label layoutX="1332.0" layoutY="106.0" prefHeight="372.0" prefWidth="301.0" style="-fx-background-color: #d1d8e0;" styleClass="billing_label" stylesheets="@../assets/style/Style.css" />
+      <JFXTextField fx:id="txtCustomerContact" labelFloat="true" layoutX="264.0" layoutY="296.0" prefHeight="31.0" prefWidth="218.0" promptText="Cust Contact" stylesheets="@../assets/style/old.css" />
+      <JFXTextField fx:id="txtCustomerEmail" labelFloat="true" layoutX="264.0" layoutY="351.0" prefHeight="31.0" prefWidth="218.0" promptText="Cust E - Mail" stylesheets="@../assets/style/old.css" />
+      <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="30.0" layoutY="351.0" prefHeight="31.0" prefWidth="218.0" promptText="Cust Name" stylesheets="@../assets/style/old.css" />
+      <JFXTextField fx:id="txtCustomerId" labelFloat="true" layoutX="30.0" layoutY="292.0" prefHeight="31.0" prefWidth="218.0" promptText="Cust ID" stylesheets="@../assets/style/old.css" />
+      <ComboBox fx:id="cbCustomerType" layoutX="31.0" layoutY="246.0" onAction="#cbCustomerTypeOnAction" prefHeight="31.0" prefWidth="218.0" promptText="Customers" />
+      <JFXButton layoutX="150.0" layoutY="414.0" prefHeight="31.0" prefWidth="218.0" style="-fx-background-color: white;" styleClass="button-" stylesheets="@../assets/style/old.css" text="Add Customer">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtItemName" editable="false" labelFloat="true" layoutX="936.0" layoutY="150.0" prefHeight="31.0" prefWidth="382.0" promptText="NAME" stylesheets="@../assets/style/old.css" />
+      <Label alignment="CENTER" layoutX="1384.0" layoutY="144.0" prefHeight="63.0" prefWidth="199.0" text="Total">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="487.0" layoutY="316.0" prefHeight="165.0" prefWidth="840.0" style="-fx-background-color: #d1d8e0;" styleClass="billing_label" stylesheets="@../assets/style/Style.css" />
+      <JFXButton layoutX="927.0" layoutY="423.0" onAction="#btnAddToCartOnAction" prefHeight="31.0" prefWidth="382.0" style="-fx-background-color: white;" styleClass="button-" stylesheets="@../assets/style/old.css" text="Add To Cart">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="38.0" layoutY="113.0" prefHeight="35.0" prefWidth="166.0" text="Payement ID">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label layoutX="38.0" layoutY="160.0" prefHeight="43.0" prefWidth="70.0" text="Time">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label layoutX="259.0" layoutY="160.0" prefHeight="43.0" prefWidth="70.0" text="Date">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="lblOrderId" layoutX="195.0" layoutY="119.0" prefHeight="31.0" prefWidth="178.0" />
+      <JFXButton layoutX="1351.0" layoutY="438.0" prefHeight="31.0" prefWidth="131.0" style="-fx-background-color: white;" styleClass="button-" stylesheets="@../assets/style/old.css" text="Remove">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="1492.0" layoutY="438.0" onAction="#btnPlaceOrderOnAction" prefHeight="31.0" prefWidth="138.0" style="-fx-background-color: white;" styleClass="button-" stylesheets="@../assets/style/old.css" text="Place Order">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtQtyOnHand" editable="false" labelFloat="true" layoutX="936.0" layoutY="198.0" prefHeight="31.0" prefWidth="382.0" promptText="QTY On Hand" stylesheets="@../assets/style/old.css" />
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="516.0" layoutY="383.0" prefHeight="31.0" prefWidth="382.0" promptText="QTY" stylesheets="@../assets/style/old.css" />
+      <JFXComboBox fx:id="cbType" layoutX="503.0" layoutY="144.0" onAction="#cbItemTypeOnAction" prefHeight="31.0" prefWidth="382.0" promptText="Item Type" />
+      <JFXComboBox fx:id="cbItem" layoutX="503.0" layoutY="205.0" onAction="#cbItemNameOnAction" prefHeight="31.0" prefWidth="382.0" promptText="Select Item" />
+      <Label fx:id="lblTotal" alignment="CENTER" layoutX="1407.0" layoutY="262.0" prefHeight="56.0" prefWidth="186.0" />
+      <JFXTextField fx:id="txtUnitPrice" layoutX="936.0" layoutY="262.0" prefHeight="31.0" prefWidth="368.0" promptText="Unit Price" />
+   </children>
+</AnchorPane>
